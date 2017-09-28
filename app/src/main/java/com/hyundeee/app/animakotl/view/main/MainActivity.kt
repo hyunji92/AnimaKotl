@@ -10,7 +10,6 @@ import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
-import android.support.v4.content.ContextCompat.checkSelfPermission
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -57,40 +56,6 @@ class MainActivity : AppCompatActivity() {
         display.getSize(mSize)
 
     }
-
-
-    /*// Check for camera permission in MashMallow
-    fun requestForCameraPermission(view: View) {
-        val permission = Manifest.permission.CAMERA
-        if (ContextCompat.checkSelfPermission(this@MainActivity, permission) !== PackageManager.PERMISSION_GRANTED) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this@MainActivity, permission)) {
-                // Show permission rationale
-            } else {
-                // Handle the result in Activity#onRequestPermissionResult(int, String[], int[])
-                ActivityCompat.requestPermissions(this@MainActivity, arrayOf(permission), REQUEST_CAMERA_PERMISSION)
-            }
-        } else {
-            // Start CameraActivity
-        }
-    }
-
-    // Start CameraActivity
-    var startCustomCameraIntent = Intent(this, CameraActivity::class.java)
-
-    override fun startActivityForResult(intent: Intent?, requestCode: Int) {
-        super.startActivityForResult(intent, requestCode)
-    }
-    //startActivityForResult(startCustomCameraIntent, REQUEST_CAMERA)
-
-    // Receive Uri of saved square photo
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
-        if (resultCode != Activity.RESULT_OK) return
-
-        if (requestCode == REQUEST_CAMERA) {
-            val photoUri = data.data
-        }
-        super.onActivityResult(requestCode, resultCode, data)
-    }*/
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
         if (resultCode != Activity.RESULT_OK) return
